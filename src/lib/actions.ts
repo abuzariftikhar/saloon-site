@@ -15,9 +15,9 @@ export async function createService(formData: FormData) {
   const name = formData.get("name") as string;
   const description = (formData.get("description") as string) || null;
   const durationMinutes = Number(formData.get("durationMinutes"));
-  const priceInCents = Math.round(Number(formData.get("price")) * 100);
+  const priceInCents = Math.round(Number((formData.get("price") as string || "0")) * 100 + 0.001);
 
-  if (!name || !durationMinutes || !priceInCents) {
+  if (!name || isNaN(durationMinutes) || durationMinutes <= 0 || isNaN(priceInCents) || priceInCents < 0) {
     return { error: "Please fill in all required fields." };
   }
 
