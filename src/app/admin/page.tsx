@@ -6,7 +6,7 @@ import AddServiceForm from "./AddServiceForm";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Admin Dashboard – Salon Manager",
+  title: "Admin Dashboard – The Gentlemen's Barber",
 };
 
 export default async function AdminPage() {
@@ -15,7 +15,7 @@ export default async function AdminPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 space-y-12">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-primary">Admin Dashboard</h1>
+        <h1 className="text-3xl font-bold text-primary">Barber Dashboard</h1>
         <Link
           href="/admin/appointments"
           className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
@@ -24,10 +24,10 @@ export default async function AdminPage() {
         </Link>
       </div>
 
-      {/* ── Book for a client ── */}
+      {/* ── Book for a walk-in ── */}
       <section>
-        <h2 className="text-xl font-bold mb-4">Book for a Client</h2>
-        <div className="rounded-xl border border-gray-200 bg-surface p-6 shadow-sm">
+        <h2 className="text-xl font-bold mb-4">Book for a Walk-in</h2>
+        <div className="rounded-xl border border-gray-700 bg-surface p-6 shadow-sm">
           <BookingForm services={services} isAdmin />
         </div>
       </section>
@@ -35,7 +35,7 @@ export default async function AdminPage() {
       {/* ── Manage services ── */}
       <section>
         <h2 className="text-xl font-bold mb-4">Add a Service</h2>
-        <div className="rounded-xl border border-gray-200 bg-surface p-6 shadow-sm">
+        <div className="rounded-xl border border-gray-700 bg-surface p-6 shadow-sm">
           <AddServiceForm />
         </div>
       </section>
@@ -48,7 +48,7 @@ export default async function AdminPage() {
             {services.map((s) => (
               <div
                 key={s.id}
-                className="rounded-xl border border-gray-200 bg-surface p-4 shadow-sm"
+                className="rounded-xl border border-gray-700 bg-surface p-4 shadow-sm"
               >
                 <h3 className="font-bold">{s.name}</h3>
                 {s.description && (

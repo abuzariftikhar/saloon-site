@@ -5,7 +5,7 @@ import CancelButton from "./CancelButton";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "All Appointments – Salon Manager",
+  title: "All Appointments – The Gentlemen's Barber",
 };
 
 export default async function AppointmentsPage() {
@@ -15,7 +15,7 @@ export default async function AppointmentsPage() {
     <div className="mx-auto max-w-5xl px-4 py-12">
       <h1 className="text-3xl font-bold text-primary">All Appointments</h1>
       <p className="mt-2 text-muted">
-        View and manage every appointment in the system.
+        View and manage every appointment at the shop.
       </p>
 
       {appointments.length === 0 ? (
@@ -23,7 +23,7 @@ export default async function AppointmentsPage() {
       ) : (
         <div className="mt-8 overflow-x-auto">
           <table className="w-full text-left text-sm">
-            <thead className="border-b border-gray-200 text-xs uppercase text-muted">
+            <thead className="border-b border-gray-700 text-xs uppercase text-muted">
               <tr>
                 <th className="px-3 py-3">Date</th>
                 <th className="px-3 py-3">Time</th>
@@ -35,9 +35,9 @@ export default async function AppointmentsPage() {
                 <th className="px-3 py-3">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-gray-700">
               {appointments.map((a) => (
-                <tr key={a.id} className="hover:bg-gray-50">
+                <tr key={a.id} className="hover:bg-gray-800">
                   <td className="px-3 py-3 whitespace-nowrap">{a.date}</td>
                   <td className="px-3 py-3 whitespace-nowrap">{a.time}</td>
                   <td className="px-3 py-3">
@@ -52,15 +52,15 @@ export default async function AppointmentsPage() {
                     <span
                       className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${
                         a.status === "confirmed"
-                          ? "bg-green-100 text-green-800"
-                          : "bg-red-100 text-red-800"
+                          ? "bg-green-900 text-green-300"
+                          : "bg-red-900 text-red-300"
                       }`}
                     >
                       {a.status}
                     </span>
                   </td>
                   <td className="px-3 py-3 text-xs">
-                    {a.bookedByAdmin ? "Admin" : "Client"}
+                    {a.bookedByAdmin ? "Barber" : "Client"}
                   </td>
                   <td className="px-3 py-3">
                     {a.status === "confirmed" && <CancelButton id={a.id} />}

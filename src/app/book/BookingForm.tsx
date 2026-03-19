@@ -65,7 +65,7 @@ export default function BookingForm({
 
   if (services.length === 0) {
     return (
-      <div className="rounded-lg border border-gray-200 bg-surface p-8 text-center">
+      <div className="rounded-lg border border-gray-700 bg-surface p-8 text-center">
         <p className="text-muted">
           No services available yet.{" "}
           {isAdmin ? "Add a service below first." : "Please check back later."}
@@ -89,7 +89,7 @@ export default function BookingForm({
           required
           value={selectedService}
           onChange={(e) => setSelectedService(e.target.value)}
-          className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary"
+          className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
         >
           <option value="">Choose a service…</option>
           {services.map((s) => (
@@ -114,7 +114,7 @@ export default function BookingForm({
             name="clientName"
             type="text"
             required
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary"
+            className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
           />
         </div>
         <div>
@@ -126,7 +126,7 @@ export default function BookingForm({
             name="clientEmail"
             type="email"
             required
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary"
+            className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
           />
         </div>
         <div>
@@ -137,7 +137,7 @@ export default function BookingForm({
             id="clientPhone"
             name="clientPhone"
             type="tel"
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary"
+            className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
           />
         </div>
       </div>
@@ -156,7 +156,7 @@ export default function BookingForm({
             min={today}
             value={selectedDate}
             onChange={(e) => handleDateChange(e.target.value)}
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary"
+            className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
           />
         </div>
         <div>
@@ -176,10 +176,10 @@ export default function BookingForm({
                     onClick={() => setSelectedTime(slot)}
                     className={`rounded-md border px-2 py-1.5 text-sm transition-colors ${
                       isBooked
-                        ? "cursor-not-allowed bg-gray-100 text-gray-400 line-through"
+                        ? "cursor-not-allowed bg-gray-800 text-gray-500 line-through"
                         : isSelected
                         ? "border-primary bg-primary text-white"
-                        : "border-gray-300 hover:border-primary"
+                        : "border-gray-600 hover:border-primary"
                     }`}
                   >
                     {slot}
@@ -201,7 +201,7 @@ export default function BookingForm({
           id="notes"
           name="notes"
           rows={3}
-          className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary"
+          className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
         />
       </div>
 
@@ -210,8 +210,8 @@ export default function BookingForm({
         <div
           className={`rounded-lg p-3 text-sm ${
             message.type === "success"
-              ? "bg-green-50 text-green-800"
-              : "bg-red-50 text-red-800"
+              ? "bg-green-900 text-green-300"
+              : "bg-red-900 text-red-300"
           }`}
         >
           {message.text}
