@@ -36,7 +36,7 @@ export default function AddServiceForm() {
             name="name"
             type="text"
             required
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary"
+            className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
           />
         </div>
         <div>
@@ -50,7 +50,7 @@ export default function AddServiceForm() {
             step="0.01"
             min="0"
             required
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary"
+            className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
           />
         </div>
         <div>
@@ -64,7 +64,7 @@ export default function AddServiceForm() {
             min="5"
             step="5"
             required
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary"
+            className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
           />
         </div>
         <div>
@@ -75,7 +75,7 @@ export default function AddServiceForm() {
             id="description"
             name="description"
             type="text"
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary"
+            className="w-full rounded-lg border border-gray-600 bg-gray-800 px-3 py-2 text-foreground focus:border-primary focus:ring-1 focus:ring-primary"
           />
         </div>
       </div>
@@ -84,8 +84,8 @@ export default function AddServiceForm() {
         <div
           className={`rounded-lg p-3 text-sm ${
             message.type === "success"
-              ? "bg-green-50 text-green-800"
-              : "bg-red-50 text-red-800"
+              ? "bg-green-900 text-green-300"
+              : "bg-red-900 text-red-300"
           }`}
         >
           {message.text}
